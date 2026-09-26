@@ -1,0 +1,38 @@
+{
+  "name": "openfox-community-hub",
+  "version": "1.0.1",
+  "description": "Community Hub plugin to share, export, import, and install workflows, agents, MCPs, skills, and commands without a backend.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "openfox": {
+    "apiVersion": 2,
+    "displayName": "Community Hub",
+    "description": "Share, export, import, and install OpenFox workflows, agents, sub-agents, MCP servers, skills, and commands via static Git/CDN registries.",
+    "entry": "./dist/index.js",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"9\"></circle><path d=\"M3.3 9h17.4\"></path><path d=\"M3.3 15h17.4\"></path><path d=\"M12 3c2.4 2.5 3.7 5.6 3.7 9S14.4 18.5 12 21c-2.4-2.5-3.7-5.6-3.7-9S9.6 5.5 12 3z\"></path></svg>",
+    "capabilities": [
+      "tools",
+      "ui",
+      "settings",
+      "rpc",
+      "notifications"
+    ],
+    "timeoutMs": 30000
+  },
+  "peerDependencies": {
+    "openfox": ">=2.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.0",
+    "vitest": "^3.0.0"
+  }
+}
