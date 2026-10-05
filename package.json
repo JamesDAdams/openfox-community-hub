@@ -1,6 +1,6 @@
 {
   "name": "openfox-community-hub",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Community Hub plugin to share, export, import, and install workflows, agents, MCPs, skills, and commands without a backend.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -9,7 +9,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format esm --dts --clean",
+    "build": "tsup src/index.ts --format esm --clean",
     "test": "vitest run",
     "typecheck": "tsc --noEmit"
   },
@@ -32,6 +32,7 @@
     "openfox": ">=2.0.0"
   },
   "devDependencies": {
+    "tsup": "^8.4.0",
     "typescript": "^5.8.0",
     "vitest": "^3.0.0"
   }
