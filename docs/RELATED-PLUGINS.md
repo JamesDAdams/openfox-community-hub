@@ -9,13 +9,14 @@
 ## Workflow Visualizer
 
 - Repository: https://github.com/theshwal/openfox-workflow-visualizer
-- Version: `0.2.0` — `openfox.apiVersion: 2`, ESM entry, zero runtime dependencies
+- Version: `0.3.1` — `openfox.apiVersion: 2`, ESM entry, zero runtime dependencies
 - Install: **Settings → Plugins → Install from GitHub** →
   `https://github.com/theshwal/openfox-workflow-visualizer`
 - What it does: contributes a `composer.top` bar (workflow name, current step,
-  exact iteration counters) and a **Graph** button opening an iframe panel with a
-  real SVG workflow diagram — steps, transitions, current-step highlight and
-  per-step engine counts, built from the workflow definition.
+  exact iteration counters) and a **Graph** button opening a panel that renders
+  **the workflow manager's own diagram component** (vendored verbatim from
+  co-l/openfox @ 0694574, MIT, with a documented in-tree runtime-highlight patch),
+  including the active-step highlight and per-step engine counts.
 - Capabilities: `ui`, `hooks`, `rpc`, `assets`. No network to third parties, no
   telemetry, no DOM patching.
 - Known limits: the counter can be empty on the very first event; after a host
@@ -23,9 +24,9 @@
   "read current execution" API for plugins); the native core variant proposed in
   https://github.com/co-l/openfox/pull/465 (draft, not merged) is richer but is
   **not** required by this plugin.
-- Tests: 37 unit tests; verified install/enable/disable/uninstall on an isolated
+- Tests: 34 unit tests; verified install/enable/disable/uninstall on an isolated
   OpenFox instance; Chromium end-to-end check of bar → panel → SVG graph
-  (7 nodes, 10 edges, current step highlighted).
+  (the manager diagram rendered with the current step highlighted).
 
 ## Why this is not a pack
 
