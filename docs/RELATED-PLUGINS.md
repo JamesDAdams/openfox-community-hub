@@ -9,7 +9,7 @@
 ## Workflow Visualizer
 
 - Repository: https://github.com/theshwal/openfox-workflow-visualizer
-- Version: `0.3.1` — `openfox.apiVersion: 2`, ESM entry, zero runtime dependencies
+- Version: `0.3.5` — `openfox.apiVersion: 2`, ESM entry, zero runtime dependencies
 - Install: **Settings → Plugins → Install from GitHub** →
   `https://github.com/theshwal/openfox-workflow-visualizer`
 - What it does: contributes a `composer.top` bar (workflow name, current step,
@@ -24,7 +24,9 @@
   "read current execution" API for plugins); the native core variant proposed in
   https://github.com/co-l/openfox/pull/465 (draft, not merged) is richer but is
   **not** required by this plugin.
-- Tests: 34 unit tests; verified install/enable/disable/uninstall on an isolated
+- Entry point: the **Workflow graph** button is always visible above the chat
+  composer (even when no workflow runs) and opens the panel.
+- Tests: 35 unit tests; verified install/enable/disable/uninstall on an isolated
   OpenFox instance; Chromium end-to-end check of bar → panel → SVG graph
   (the manager diagram rendered with the current step highlighted).
 
